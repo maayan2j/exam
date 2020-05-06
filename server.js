@@ -7,22 +7,26 @@ app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
 
 
-
+//---------Getting data by ingredient from recipes json
 app.get('/recipes/:ingredient', function (request, response) {
-    let ingredient = request.params.ingredient
+    const ingredient = request.params.ingredient
     console.log(ingredient)
+
+    urllib.request(`https://recipes-goodness.herokuapp.com/recipes/${ingredient}`, function (err, data, res) {
+        const recipes = JSON.parse(data).results
+        console.log(recipes)
+    })
 })
 
 
-
-
-
+//--------Sanity check
 app.get('/sanity', function (request, response) {
     console.log("Sanity check - All good")
     response.send("OK")
 })
 
 
+//--------Server check
 const port = 8080
 app.listen(port, function () {
     console.log(`Running server on port ${port}`)
