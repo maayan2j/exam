@@ -1,0 +1,11 @@
+#recipes-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.recipes{
+
+    color: green;
+    text-align: center;
+    align-content: center;
+}

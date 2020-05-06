@@ -19,9 +19,8 @@
     <script id="recipes-info" type="text/x-handlebars-template">
         {{#each recipes}}
         <p class="recipes">{{title}}</p>
-        <img src={{thumbnail}}>
-
-
+        <img class="recipes" src={{thumbnail}} onClick='alert(`Sooooo tasty!!!^-^ you better try me! My ingredients are: {{ingredients}}`)'>
+        <li class="recipes">{{ingredients}}</li>
         {{/each}}
     </script>
 
