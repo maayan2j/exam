@@ -10,11 +10,10 @@ app.use(express.static(path.join(__dirname, 'node_modules')))
 //---------Getting data by ingredient from recipes json
 app.get('/recipes/:ingredient', function (request, response) {
     const ingredient = request.params.ingredient
-    console.log(ingredient)
 
     urllib.request(`https://recipes-goodness.herokuapp.com/recipes/${ingredient}`, function (err, data, res) {
         const recipes = JSON.parse(data).results
-        console.log(recipes)
+        response.send(recipes)
     })
 })
 
