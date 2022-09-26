@@ -9,7 +9,7 @@
     "nodeman": "^1.1.2",
     "nodemon": "^2.0.3",
     "path": "^0.12.7",
-    "urllib": "^2.34.2"
+    "urllib": "^2.38.1"
   },
   "devDependencies": {},
   "scripts": {
